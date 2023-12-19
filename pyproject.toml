@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django-vercel-test"
+version = "0.1.0"
+description = ""
+authors = ["Louis Amon <louis@nuage.studio>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "*"
+
+[tool.poetry.group.dev.dependencies]
+poetry-plugin-export = "^1.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
