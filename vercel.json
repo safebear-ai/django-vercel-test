@@ -1,14 +1,14 @@
 {
-  "builds": [
-    {
-      "src": "vercel_app/wsgi.py",
-      "use": "@vercel/python"
+  "functions": {
+    "vercel_app/wsgi.py": {
+      "runtime": "python@3.9"
     }
-  ],
-  "routes": [
+  },
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "vercel_app/wsgi.py"
+      "source": "/(.*)",
+      "destination": "vercel_app/wsgi.py"
     }
   ]
 }
