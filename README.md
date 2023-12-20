@@ -10,41 +10,41 @@ https://django-template.vercel.app/
 
 ## How it Works
 
-Our Django application, `example` is configured as an installed application in `vercel_app/settings.py`:
+Our Django application, `safebear_admin` is configured as an installed application in `api/settings.py`:
 
 ```python
-# vercel_app/settings.py
+# api/settings.py
 INSTALLED_APPS = [
     # ...
-    'example',
+    'safebear_admin',
 ]
 ```
 
 We allow "\*.vercel.app" subdomains in `ALLOWED_HOSTS`, in addition to 127.0.0.1:
 
 ```python
-# vercel_app/settings.py
+# api/settings.py
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 ```
 
 The `wsgi` module must use a public variable named `app` to expose the WSGI application:
 
 ```python
-# vercel_app/wsgi.py
+# api/wsgi.py
 app = get_wsgi_application()
 ```
 
-The corresponding `WSGI_APPLICATION` setting is configured to use the `app` variable from the `vercel_app.wsgi` module:
+The corresponding `WSGI_APPLICATION` setting is configured to use the `app` variable from the `api.wsgi` module:
 
 ```python
-# vercel_app/settings.py
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+# api/settings.py
+WSGI_APPLICATION = 'api.wsgi.app'
 ```
 
-There is a single view which renders the current time in `example/views.py`:
+There is a single view which renders the current time in `safebear_admin/views.py`:
 
 ```python
-# example/views.py
+# safebear_admin/views.py
 from datetime import datetime
 
 from django.http import HttpResponse
@@ -63,13 +63,13 @@ def index(request):
     return HttpResponse(html)
 ```
 
-This view is exposed a URL through `example/urls.py`:
+This view is exposed a URL through `safebear_admin/urls.py`:
 
 ```python
-# example/urls.py
+# safebear_admin/urls.py
 from django.urls import path
 
-from example.views import index
+from safebear_admin.views import index
 
 
 urlpatterns = [
@@ -77,15 +77,15 @@ urlpatterns = [
 ]
 ```
 
-Finally, it's made accessible to the Django server inside `vercel_app/urls.py`:
+Finally, it's made accessible to the Django server inside `api/urls.py`:
 
 ```python
-# vercel_app/urls.py
+# api/urls.py
 from django.urls import path, include
 
 urlpatterns = [
     ...
-    path('', include('example.urls')),
+    path('', include('safebear_admin.urls')),
 ]
 ```
 

@@ -1,14 +1,14 @@
 {
   "functions": {
-    "vercel_app/wsgi.py": {
-      "runtime": "python@3.9"
+    "api/wsgi.py": {
+      "maxDuration": 30
     }
   },
   "cleanUrls": true,
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "vercel_app/wsgi.py"
+      "destination": "api/wsgi.py"
     }
   ]
 }
