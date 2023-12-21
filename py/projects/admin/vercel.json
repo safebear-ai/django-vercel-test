@@ -1,6 +1,6 @@
 {
   "functions": {
-    "py/projects/admin/api/wsgi.py": {
+    "api/wsgi.py": {
       "memory": 128,
       "maxDuration": 30
     }
@@ -12,7 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "py/projects/admin/api/wsgi.py"
+      "dest": "api/wsgi.py"
     }
   ]
 }

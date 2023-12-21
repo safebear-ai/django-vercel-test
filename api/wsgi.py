@@ -1,1 +1,0 @@
-py/projects/admin/config/wsgi.py
