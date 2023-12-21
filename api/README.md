@@ -1,0 +1,1 @@
+This folder contains Vercel serverless functions to be deployed 
