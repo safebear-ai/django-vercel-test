@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/wsgi.py": {
+    "api/django_admin_wsgi.py": {
       "memory": 128,
       "maxDuration": 30
     }
@@ -12,7 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "api/wsgi.py"
+      "dest": "api/django_admin_wsgi.py"
     }
   ]
 }
